@@ -1,0 +1,10 @@
+.react-axios-success{
+  padding: 1em;
+  text-align: center;
+}
+
+.react-axios-preview {
+  padding: 0.5em;
+  border: 1px dashed #777;
+  text-align: left;
+}
