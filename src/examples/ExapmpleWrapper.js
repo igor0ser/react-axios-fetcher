@@ -3,7 +3,7 @@ import { Switch, Button } from 'antd';
 import './ExampleWrapper.css';
 
 export const ExampleWrapper = ({ title, children, code }) => {
-  const [start, changeStart] = useState(false);
+  const [showFetcher, changeShowFetcher] = useState(false);
   const [shouldSuccess, changeShouldSuccess] = useState(true);
 
 
@@ -19,26 +19,23 @@ export const ExampleWrapper = ({ title, children, code }) => {
             checked={shouldSuccess}
             onChange={changeShouldSuccess}
           />
-          {/*<input*/}
-            {/*type="checkbox"*/}
-            {/*checked={shouldSuccess}*/}
-            {/*onChange={(e) => changeShouldSuccess(e.target.checked)}*/}
-          {/*/>*/}
           &nbsp;
           Use proper url
         </label>
         &nbsp;
-        {!start && (
-          <Button
-            onClick={() => changeStart(true)}
-            type={shouldSuccess ? 'primary' : 'danger'}
-          >
-            Start loading
-          </Button>
-        )}
+        <Button
+          onClick={() => changeShowFetcher(!showFetcher)}
+          type={shouldSuccess ? 'primary' : 'danger'}
+          icon={showFetcher ? 'close-square' : 'play-circle'}
+          className="example-wrapper__button"
+        >
+          {showFetcher ? 'Unmount Fetcher' : 'Render Fetcher'}
+        </Button>
       </div>
       <div className="example-wrapper__example">
-        {start && children(shouldSuccess)}
+        {showFetcher ? children(shouldSuccess) : (
+          <em>Fetcher will be rendered here</em>
+        )}
       </div>
     </div>
   );

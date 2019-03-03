@@ -22,8 +22,14 @@ const Examples = () =>(
   <div className="root">
     <h2>React Axios Fetcher</h2>
     <ExampleWrapper
-      title="With children render function"
+      title="Default variant (json preview)"
       code={codeBlocks[0]}
+    >
+      {shouldSuccess => <Fetcher url={getUrl(shouldSuccess)}/>}
+    </ExampleWrapper>
+    <ExampleWrapper
+      title="With children render function"
+      code={codeBlocks[1]}
     >
       {shouldSuccess =>
         <Fetcher url={getUrl(shouldSuccess)}>
@@ -38,18 +44,12 @@ const Examples = () =>(
     </ExampleWrapper>
     <ExampleWrapper
       title="With passed component"
-      code={codeBlocks[1]}
+      code={codeBlocks[2]}
     >
       {shouldSuccess => <Fetcher
         url={getUrl(shouldSuccess)}
         component={ShowInfo}
       />}
-    </ExampleWrapper>
-    <ExampleWrapper
-      title="Without passed component or children (shows json preview and refresh button)"
-      code={codeBlocks[2]}
-    >
-      {shouldSuccess => <Fetcher url={getUrl(shouldSuccess)}/>}
     </ExampleWrapper>
     <ExampleWrapper
       title="With reassigned axios config (shows error after trying to post)"
@@ -71,7 +71,7 @@ const Examples = () =>(
       />}
     </ExampleWrapper>
     <ExampleWrapper
-      title="With reassigned loader and error (request is failing)"
+      title="With reassigned loader and error"
       code={codeBlocks[5]}
     >
       {shouldSuccess => <Fetcher

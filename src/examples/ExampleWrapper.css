@@ -19,6 +19,10 @@
   margin-bottom: 1em;
 }
 
+.example-wrapper__button {
+  min-width: 200px;
+}
+
 .example-wrapper__example {
   background: #eee;
   padding: 16px;

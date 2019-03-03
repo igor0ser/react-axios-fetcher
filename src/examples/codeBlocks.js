@@ -1,4 +1,5 @@
 export const codeBlocks = [
+`<Fetcher url="https://randomuser.me/api"/>`,
 `<Fetcher url="https://randomuser.me/api">
   {({ data, refresh }) => (
     <div>
@@ -7,11 +8,10 @@ export const codeBlocks = [
     </div>
   )}
 </Fetcher>`,
-`<Fetcher
+  `<Fetcher
   url="https://randomuser.me/api"
   component={ShowInfo}
 />`,
-`<Fetcher url="https://randomuser.me/api"/>`,
 `<Fetcher
   url="https://randomuser.me/api"
   config={{ method: 'POST' }}
@@ -23,7 +23,7 @@ export const codeBlocks = [
   onSuccess={() => alert('SUCCESS')}
 />`,
 `<Fetcher
-  url={"https://randomuser.me/api"}
+  url="https://randomuser.me/api"
   loader={Spin}
   error={Empty}
 />`,
