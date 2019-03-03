@@ -1,0 +1,25 @@
+.example-wrapper {
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.example-wrapper__code {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  border-radius: 4px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.8em;
+}
+
+.example-wrapper__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1em;
+}
+
+.example-wrapper__example {
+  background: #eee;
+  padding: 16px;
+}
