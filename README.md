@@ -11,7 +11,7 @@ Features:
 ## Installation
 
 ```bash
-npm install react-fetcher
+npm install react-axios-fetcher
 ```
 
 ## Usage
@@ -19,30 +19,24 @@ npm install react-fetcher
 You can pass function as a children or pass prop `component` to render received data:
 
 ```javascipt
-import Fetcher from 'react-fetcher';
+import Fetcher from 'react-axios-fetcher';
 
 const ShowData = ({ data, refresh }) => (...)
 
 const Component1 = () => (
-  <Fetcher url="...">
+  <Fetcher url="https://randomuser.me/api">
     ({ data, refresh }) => <ShowData data={data} refresh={refresh} />
   </Fetcher>
 )
 
 const Component2 = () => (
-  <Fetcher url="..." component={ShowData} />
+  <Fetcher url="https://randomuser.me/api" component={ShowData} />
 )
 ```
 
 See more examples at [Demo](https://igor0ser.github.io/).
 
 ## Api
-
-bla bla
-
-## Why axios instead of native fetch
-
-[Why I won’t be using Fetch API in my apps](https://medium.com/@shahata/why-i-wont-be-using-fetch-api-in-my-apps-6900e6c6fe78).
 
 | Prop                | Type                                                                | Default            | Description                                                          |
 |---------------------|---------------------------------------------------------------------|--------------------|----------------------------------------------------------------------|
@@ -56,3 +50,7 @@ bla bla
 | onError             | (error) => void                                                     | -                  | Callback would be invoked when failed.                               |
 | onSuccess           | (data) => void                                                      | -                  | Callback would be invoked when succeeded.                            |
 | getDataFromResponse | (response: AxiosResponse) => any                                    | ({ data }) => data | Get needed data from received response.                              |
+
+## Why axios instead of native fetch
+
+[Why I won’t be using Fetch API in my apps](https://medium.com/@shahata/why-i-wont-be-using-fetch-api-in-my-apps-6900e6c6fe78).
