@@ -6,12 +6,11 @@ export const ExampleWrapper = ({ title, children, code }) => {
   const [showFetcher, changeShowFetcher] = useState(false);
   const [shouldSuccess, changeShouldSuccess] = useState(true);
 
-
   return (
     <div className="example-wrapper">
       <h3>{title}:</h3>
       <pre className="example-wrapper__code">
-        {code}
+        {code(shouldSuccess).replace(/\n {6}/g, '\n').trim()}
       </pre>
       <div className="example-wrapper__controls">
         <label>
@@ -26,7 +25,7 @@ export const ExampleWrapper = ({ title, children, code }) => {
         <Button
           onClick={() => changeShowFetcher(!showFetcher)}
           type={shouldSuccess ? 'primary' : 'danger'}
-          icon={showFetcher ? 'close-square' : 'play-circle'}
+          icon={showFetcher ? 'close-square' : 'download'}
           className="example-wrapper__button"
         >
           {showFetcher ? 'Unmount Fetcher' : 'Render Fetcher'}

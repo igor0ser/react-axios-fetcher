@@ -36,7 +36,7 @@ export const useFetch = ({ url, config, callbacks }) => {
       });
 
     return cancel
-  }, [refreshToken]);
+  }, [refreshToken, url]);
 
   return {
     fetchState,
