@@ -1,9 +1,9 @@
 ## React Fetcher
 
-A lightweight component for fetching data without writing tones of template code.
+A simple and lightweight component for fetching data without writing tones of template code. Uses [axios](https://github.com/axios/axios).
 Features:
  - fetch data from passed url
- - redefine [axios](https://github.com/axios/axios) config if you want to modify request
+ - redefine axios config if you want to modify request
  - define components for *Loading*, *Error* and *Success* states (or use default ones)
  - refresh data if you need
  - request is cancelled if component is unmounted or new request is sent
@@ -25,7 +25,7 @@ const ShowData = ({ data, refresh }) => (...)
 
 const Component1 = () => (
   <Fetcher url="...">
-    ({}) => <ShowData data={data} refresh={refresh} />
+    ({ data, refresh }) => <ShowData data={data} refresh={refresh} />
   </Fetcher>
 )
 
