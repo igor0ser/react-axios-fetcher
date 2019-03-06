@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Success.css';
 
 export const Success = ({ data, refresh }) => (
@@ -9,3 +10,8 @@ export const Success = ({ data, refresh }) => (
     <button onClick={refresh}>Refresh</button>
   </div>
 );
+
+Success.propTypes = {
+  data: PropTypes.any,
+  refresh: PropTypes.func.isRequired,
+};

@@ -2,7 +2,8 @@
   "name": "react-axios-fetcher",
   "version": "0.1.1",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "prop-types": "^15.5.7"
   },
   "peerDependencies": {
     "react": "^16.8.3"

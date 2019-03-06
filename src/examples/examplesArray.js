@@ -58,9 +58,9 @@ export const examples = [
   {
     title: 'With reassigned axios config',
     code: shouldSuccess =>
-      `<Fetcher url="${getUrl(shouldSuccess)}" config={{ method: 'PUT' }}`,
+      `<Fetcher url="${getUrl(shouldSuccess)}" config={{ method: 'HEAD' }}`,
     fn: shouldSuccess =>
-      <Fetcher url={getUrl(shouldSuccess)} config={{ method: 'PUT' }}/>
+      <Fetcher url={getUrl(shouldSuccess)} config={{ method: 'HEAD' }}/>
   },
   {
     title: 'With passed callbacks',

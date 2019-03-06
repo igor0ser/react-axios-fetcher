@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Error.css';
 
 export const ErrorComp = ({ error, refresh }) => (
@@ -8,3 +9,10 @@ export const ErrorComp = ({ error, refresh }) => (
     <button onClick={refresh}>Refresh</button>
   </div>
 );
+
+ErrorComp.propTypes = {
+  error: PropTypes.shape({
+    message: PropTypes.string.isRequired
+  }).isRequired,
+  refresh: PropTypes.func.isRequired,
+};

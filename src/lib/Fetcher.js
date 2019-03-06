@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Loader as DefaultLoader } from './Loader/Loader'
 import { ErrorComp as DefaultErrorComp } from './Error/Error'
 import { Success } from './Success/Success'
@@ -34,7 +35,7 @@ const Fetcher = ({
   }
 
   return null;
-}
+};
 
 const defaultTransformData = ({ data }) => data;
 
@@ -46,6 +47,27 @@ Fetcher.defaultProps = {
   onLoading: noop,
   onError: noop,
   onSuccess: noop,
-}
+};
+
+Fetcher.propTypes = {
+  url: ({ url, config = {} }) => {
+    if ([typeof url, typeof config.url].includes('string')) return;
+    return new Error(
+      'You should define url either directly in url prop or in config object prop',
+    );
+  },
+  loader: PropTypes.func,
+  error: PropTypes.func,
+  component: PropTypes.func,
+  children: PropTypes.func,
+  transformData: PropTypes.func,
+  config: PropTypes.shape({
+    url: PropTypes.string,
+    method: PropTypes.string,
+  }),
+  onLoading: PropTypes.func,
+  onError: PropTypes.func,
+  onSuccess: PropTypes.func,
+};
 
 export default Fetcher;

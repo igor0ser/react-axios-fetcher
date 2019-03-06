@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Button } from 'antd';
 import './ExampleWrapper.css';
 
@@ -38,4 +39,10 @@ export const ExampleWrapper = ({ title, children, code }) => {
       </div>
     </div>
   );
-}
+};
+
+ExampleWrapper.propTypes = {
+  title: PropTypes.string.isRequired,
+  code: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired,
+};
